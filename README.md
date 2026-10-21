@@ -26,6 +26,27 @@
 
 ---
 
+### 2. YRUZ: crypto, web and domain tools for agents
+- **Description**: 269 pay-per-call endpoints. Crypto tools: live prices for up to 25 coins or Solana mints per call, trending coins, Solana token rug-pull check (0-100 risk score), Solana wallet portfolio in USD, Solana transaction decoding and network fees. Agent tools: web page to Markdown, link unfurl, domain intel (DNS, SPF, DMARC, DKIM, RDAP, TLS), broken links, x402 endpoint validation, uptime, wallet balance and a scored site audit. Plus social data, 18 developer utilities and a 90+ tool toolkit.
+- **Endpoint**: `https://yruz.one/api/crypto/price?ids=btc,eth,sol` (and 268 more)
+- **Discovery**: `https://yruz.one/.well-known/x402` · OpenAPI `https://yruz.one/openapi.json` · `https://yruz.one/llms.txt`
+- **Price**: **0.002-0.01 USDC** per call (x402 v1 and v2, scheme exact)
+- **Capabilities**: `crypto_prices`, `token_security`, `wallet_portfolio`, `web_extract`, `domain_intel`, `site_audit`, `x402_payment`
+- **Status**: ✅ **Active**: listed on x402scan, agent402, 402index and PayAPI Market
+- **Author**: YRUZ (zanto@yruz.one)
+
+#### 📊 How it works
+1. Call any endpoint with GET (query) or POST (JSON body); you receive HTTP 402 with the price.
+2. Pay in USDC on Solana or Base: x402 v2 via the `PAYMENT-SIGNATURE` header, v1 via `X-PAYMENT`.
+3. Resend the identical request and receive JSON. Invalid input is refused with a free 400 before payment.
+
+#### 💰 Payment
+- **Currency**: USDC (Solana or Base, same price)
+- **Wallets**: Solana `CWfaj5vDppWCp4q1X4iPYGWpCGY2Rerj9DQWqxTnz1Pp`, Base `0x235b73D50752800D9FaE24F51bEb08f47076c67A`
+- **Protocol**: x402 v1 and v2 (HTTP 402 Payment Required); facilitators OpenFacilitator, PayAI, Dexter
+
+---
+
 ## 🚀 Add Your Service
 Want to add your x402 agent service here?
 1. Ensure your service is public and supports x402.
